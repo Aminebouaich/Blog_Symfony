@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Hello !
+{% endblock %}
+
+{% block body %}
+  <section class="articles">
+    {% for article in articles %}
+      <article>
+        <h2>{{ article.title }}</h2>
+        <div class="metadta">Ecrit le {{ article.createdAt|date('d/m/Y') }} à {{ article.createdAt|date('H:i') }} dans la catégorie Politique</div>
+        <div class="content">
+          <img src="http://placehold.it/350*150" alt="" />
+          {{ article.content|raw }}
+          <a href="{{ path('blogshow', { id: article.id }) }}" class="btn btn-primary">lire la suite</a>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+{% endblock %}
