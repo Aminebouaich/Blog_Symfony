@@ -12,8 +12,8 @@ class ArticteFixtures extends Fixture
     {
         for($i = 1;$i <= 10; $i++ ){
         $article = new Article();
-        $article->setTitle("Totre de l'article n°$i")
-                ->setContent("<p>Contenu de l'artticle n°$i</p>")
+        $article->setTitle("Titre de l'article n°$i")
+                ->setContent("<p>Contenu de l'article n°$i</p>")
                 // ->setImage("")
                 ->setCreatedAt(new \DateTimeImmutable());
 
