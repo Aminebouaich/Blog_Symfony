@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Article
@@ -25,6 +26,7 @@ class Article
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     * @Assert\Length(min=10, max=255, minMessage=  "Votre titre est bien trop court")
      */
     private $title;
 

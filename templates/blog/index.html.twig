@@ -5,15 +5,17 @@
 {% endblock %}
 
 {% block body %}
-  <section class="articles">
+  <section class="articles flex flex-col">
     {% for article in articles %}
-      <article>
-        <h2>{{ article.title }}</h2>
+      <article class="p-8">
+        <h2 class="text-blue-600/100 text-5xl m-4">{{ article.title }}</h2>
         <div class="metadta">Ecrit le {{ article.createdAt|date('d/m/Y') }} à {{ article.createdAt|date('H:i') }} dans la catégorie Politique</div>
-        <div class="content">
-          <img src="http://placehold.it/350*150" alt="" />
+        <div class="content flex flex-col">
+          <img src="https://via.placeholder.com/468x60?text=Visit+Blogging.com+Now" alt="" />
           {{ article.content|raw }}
-          <a href="{{ path('blogshow', { id: article.id }) }}" class="btn btn-primary">lire la suite</a>
+          <p class="p-4"></p>
+
+          <a href="{{ path('blogshow', { id: article.id }) }}" class="btn btn-primary w-80 m-4">lire la suite</a>
         </div>
       </article>
     {% endfor %}
